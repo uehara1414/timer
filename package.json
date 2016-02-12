@@ -1,0 +1,22 @@
+{
+  "name": "timer",
+  "version": "1.0.0",
+  "description": "0.0.1",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b1015062Furukawa/timer.git"
+  },
+  "keywords": [
+    "timer"
+  ],
+  "author": "akiya furukawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/b1015062Furukawa/timer/issues"
+  },
+  "homepage": "https://github.com/b1015062Furukawa/timer#readme"
+}
