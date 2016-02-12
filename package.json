@@ -33,5 +33,8 @@
   "bugs": {
     "url": "https://github.com/b1015062Furukawa/timer/issues"
   },
-  "homepage": "https://github.com/b1015062Furukawa/timer#readme"
+  "homepage": "https://github.com/b1015062Furukawa/timer#readme",
+  "dependencies": {
+    "moment": "^2.11.2"
+  }
 }
