@@ -3,6 +3,21 @@
   "version": "1.0.0",
   "description": "0.0.1",
   "main": "index.html",
+  "window": {
+    "title": "timer",
+    "toolbar": true,
+    "frame": true,
+    "width": 300,
+    "height": 200,
+    "positin": "mouse",
+    "min_width": 100,
+    "min_height": 50,
+    "max_width": 1280,
+    "max_height": 720
+  },
+  "webkit": {
+    "plugin": true
+  },
   "scripts": {
     "test": "test"
   },
