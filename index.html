@@ -1,10 +1,28 @@
 <html>
+
   <head>
-    <titile> hello </title>
     <script src="src/jquery-2.2.0.min.js"></script>
     <script src="src/main.js"></script>
+    <link rel="stylesheet" href="./main.css">
   </head>
+
   <body>
-    <p> can you see me?? </p>
+    <div class="time">
+
+      <span class="hours"></span>
+      <span class="separator">:</span>
+      <span class="minutes"></span>
+      <span class="separator">:</span>
+      <span class="seconds"></span>
+
+
+    </div>
+    <div class="control">
+
+      <input type="button" value="start" onclick="start()">
+      <input type="button" value="stop" onclick="stop()">
+
+    </div>
   </body>
+
 </html>

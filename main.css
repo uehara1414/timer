@@ -1,0 +1,22 @@
+.time{
+  width: auto;
+  height: 80px;
+  font-size: 20pt;
+  text-align: center;
+  background: gray;
+}
+
+.control{
+  width: auto;
+  height: 50px;
+  text-align: center;
+  background: pink;
+}
+
+body{
+  -webkit-app-region: drag;
+}
+
+input{
+  -webkit-app-region: no-drag;
+}
