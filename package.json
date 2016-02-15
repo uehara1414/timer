@@ -11,7 +11,7 @@
     "frame": false,
     "width": 160,
     "height": 100,
-    "positin": "mouse",
+    "position": "mouse",
     "always-on-top": true,
     "min_width": 160,
     "min_height": 100,

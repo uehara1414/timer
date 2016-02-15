@@ -36,6 +36,16 @@ Timer.update = function()
     }
 }
 
+Timer.clear = function()
+{
+    this._leftms = 0;
+}
+
+Timer.isStarted = function()
+{
+    return this._isStarted;
+}
+
 Timer.getHours = function()
 {
     return Math.floor(this._leftms / (1000 * 60 * 60));

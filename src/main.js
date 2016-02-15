@@ -1,4 +1,6 @@
-var Timer = null;
+var gui = require("nw.gui");
+var Settings = require("./src/Settings.js")
+var Timer = require("./src/Timer.js");
 var timerID = null;
 
 function zfill(number)
@@ -12,14 +14,38 @@ function zfill(number)
 
 function start()
 {
+    if (Timer.isStarted()) {
+        return;
+    }
+
     Timer.start();
-    timerID = setInterval(update, 100)
+    timerID = setInterval(update, 100);
+    changeButtonResetToStop();
+}
+
+function save()
+{
+    Settings.defaultHours = Timer.getHours();
+    Settings.defaultMinutes = Timer.getMinutes();
+    Settings.defaultSeconds = Timer.getSeconds();
 }
 
 function update()
 {
     Timer.update();
     display();
+}
+
+function changeButtonStopToReset()
+{
+    $("input.stopAndReset").attr("value", "reset");
+    $("input.stopAndReset").attr("onclick", "reset()");
+}
+
+function changeButtonResetToStop()
+{
+    $("input.stopAndReset").attr("value", "stop");
+    $("input.stopAndReset").attr("onclick", "stop()");
 }
 
 function display()
@@ -39,6 +65,7 @@ function stop()
 {
     Timer.stop();
     clearInterval(timerID);
+    changeButtonStopToReset();
 }
 
 
@@ -70,9 +97,50 @@ window.onload = function()
         }
         update();
     });
-
-    Timer = require("./src/Timer.js");
-    Timer.addSeconds(63);
-    update();
     
+    reset();
+    update();
+    setGlobalHotKey()    
+}
+
+function reset()
+{
+    Timer.clear();
+    Timer.addHours(Settings.defaultHours);
+    Timer.addMinutes(Settings.defaultMinutes);
+    Timer.addSeconds(Settings.defaultSeconds);
+    update();
+}
+
+function setGlobalHotKey()
+{
+    /*
+        start: Ctrl+Shift+I
+        stop: --
+        reset: Ctrl+Shift+R
+    */
+    var option0 = {
+        key: "Ctrl+Shift+I",
+        active: function() {
+            start();
+        },
+        failed: function() {
+            console.log("hotkey action failed");
+        }
+    }
+    var shortcut0 = new gui.Shortcut(option0);
+    gui.App.registerGlobalHotKey(shortcut0);
+    
+    var option1 = {
+        key: "Ctrl+Shift+R",
+        active: function() {
+            stop();
+            reset();
+        },
+        failed: function() {
+            console.log("hotkey action failed");
+        }
+    }
+    var shortcut1 = new gui.Shortcut(option1);
+    gui.App.registerGlobalHotKey(shortcut1);
 }

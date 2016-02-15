@@ -47,14 +47,21 @@ div.secondsbox{
 input.start{
     position: absolute;
     left: 0%;
-    width: 50%;
+    width: 33%;
     height: 50%;
 }
 
-input.stop{
+input.stopAndReset{
     position: absolute;
-    left: 50%;    
-    width:50%;
+    left: 33%;    
+    width: 33%;
+    height: 50%;
+}
+
+input.save{
+    position: absolute;
+    left: 66%;    
+    width:33%;
     height: 50%;
 }
 
