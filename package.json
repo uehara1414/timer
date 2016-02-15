@@ -9,8 +9,8 @@
     "scrollbar": false,
     "show_in_taskbar": false,
     "frame": false,
-    "width": 300,
-    "height": 250,
+    "width": 160,
+    "height": 100,
     "positin": "mouse",
     "always-on-top": true,
     "min_width": 160,
@@ -39,5 +39,8 @@
   "homepage": "https://github.com/b1015062Furukawa/timer#readme",
   "dependencies": {
     "moment": "^2.11.2"
+  },
+  "devDependencies": {
+    "nw-builder": "^2.2.0"
   }
 }
