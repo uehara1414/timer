@@ -1,22 +1,72 @@
-.time{
-  width: auto;
-  height: 80px;
-  font-size: 20pt;
+div.time{
+  position: absolute;
+  width: 90%;
+  height: 50%;
   text-align: center;
-  background: gray;
+  background: seagreen;
 }
+
+div.hoursbox{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 30%;
+    height: 100%;
+    background: blue;
+}
+
+div.minutesbox{
+    position: absolute;
+    top: 0%;
+    left: 33%;
+    width: 30%;
+    height: 100%;
+    background: gold;
+}
+
+div.secondsbox{
+    position: absolute;
+    top: 0%;
+    left: 66%;
+    width: 30%;
+    height: 100%;
+    background: salmon;
+}
+
 
 .control{
-  width: auto;
-  height: 50px;
-  text-align: center;
-  background: pink;
+    position: absolute;
+    top: 50%;
+    width: 90%;
+    height: 40%;
+    text-align: center;
+    background: pink;
+    -webkit-app-region: drag;
 }
 
-body{
-  -webkit-app-region: drag;
+input.start{
+    position: absolute;
+    left: 0%;
+    width: 50%;
+    height: 50%;
+}
+
+input.stop{
+    position: absolute;
+    left: 50%;    
+    width:50%;
+    height: 50%;
+}
+
+img{
+    width: 40%;
+    height: 90%;
 }
 
 input{
   -webkit-app-region: no-drag;
+}
+
+body{
+    -webkit-user-select: none;
 }
