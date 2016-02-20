@@ -2,6 +2,7 @@ var gui = require("nw.gui");
 var Settings = require("./src/Settings.js")
 var Timer = require("./src/Timer.js");
 var timerID = null;
+var execpath = null;
 
 function zfill(number)
 {
@@ -33,7 +34,22 @@ function save()
 function update()
 {
     Timer.update();
+    if( Timer.isJustFinished() )
+    {
+        finish();
+    }
     display();
+}
+
+function finish()
+{
+    stop();
+    if (execpath === null) {
+        return;
+    }
+
+    var spawn = require("child_process").spawn;
+    var prc = spawn(execpath);
 }
 
 function changeButtonStopToReset()
@@ -58,7 +74,7 @@ function display()
     $("img.minute1").attr("src", "images/gif34/" + minutes[0] + ".gif");
     $("img.minute2").attr("src", "images/gif34/" + minutes[1] + ".gif");
     $("img.second1").attr("src", "images/gif34/" + seconds[0] + ".gif");
-    $("img.second2").attr("src", "images/gif34/" + seconds[1] + ".gif");    
+    $("img.second2").attr("src", "images/gif34/" + seconds[1] + ".gif");
 }
 
 function stop()
@@ -97,10 +113,20 @@ window.onload = function()
         }
         update();
     });
-    
+
+    window.ondragover = function(e)
+    {
+        e.preventDefault();
+    }
+    window.ondrop = function(e)
+    {
+        e.preventDefault();
+        execpath = e.dataTransfer.files[0].path;
+    }
+
     reset();
     update();
-    setGlobalHotKey()    
+    setGlobalHotKey()
 }
 
 function reset()
@@ -130,7 +156,7 @@ function setGlobalHotKey()
     }
     var shortcut0 = new gui.Shortcut(option0);
     gui.App.registerGlobalHotKey(shortcut0);
-    
+
     var option1 = {
         key: "Ctrl+Shift+R",
         active: function() {

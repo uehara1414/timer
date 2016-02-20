@@ -4,7 +4,7 @@ Timer._defaultms = 0;
 Timer._leftms = 0;
 Timer._isStarted = false;
 Timer._startedTime = 0;
-Timer._isFinished = false;
+Timer._isJustFinished = false;
 
 Timer.start = function()
 {
@@ -13,7 +13,7 @@ Timer.start = function()
     }
 
     this._isStarted = true;
-    this._isFinished = false;
+    this._isJustFinished = false;
     this._startedTime = new Date().getTime();
     this._defaultms = this._leftms;
 }
@@ -29,7 +29,7 @@ Timer.update = function()
         this._leftms = this._defaultms - (new Date().getTime() - this._startedTime);
 
         if( this._leftms <= 0 ) {
-            this._isFinished = true;
+            this._isJustFinished = true;
             this.stop();
             this._leftms = 0;
         }
@@ -44,6 +44,16 @@ Timer.clear = function()
 Timer.isStarted = function()
 {
     return this._isStarted;
+}
+
+Timer.isJustFinished = function()
+{
+    if ( this._isJustFinished ) {
+        this._isJustFinished = false;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 Timer.getHours = function()
