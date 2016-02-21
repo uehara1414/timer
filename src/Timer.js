@@ -74,16 +74,25 @@ Timer.getSeconds = function()
 Timer.addHours = function(hours)
 {
     this._leftms += 1000 * 60 * 60 * hours;
+    if ( this._leftms < 0 ) {
+        this._leftms = 0;
+    }
 }
 
 Timer.addMinutes = function(minutes)
 {
     this._leftms += 1000 * 60 * minutes;
+    if ( this._leftms < 0 ) {
+        this._leftms = 0;
+    }
 }
 
 Timer.addSeconds = function(seconds)
 {
     this._leftms += 1000 * seconds;
+    if ( this._leftms < 0 ) {
+        this._leftms = 0;
+    }
 }
 
 module.exports = Timer;
