@@ -114,6 +114,21 @@ window.onload = function()
         update();
     });
 
+    $("div.minutesbox").mousewheel(function(eo, delta, deltaX, deltaY){
+        Timer.addMinutes(deltaY);
+        update();
+    });
+
+    $("div.secondsbox").mousewheel(function(eo, delta, deltaX, deltaY){
+        Timer.addSeconds(deltaY);
+        update();
+    });
+
+    $("div.hoursbox").mousewheel(function(eo, delta, deltaX, deltaY){
+        Timer.addHours(deltaY);
+        update();
+    });
+
     window.ondragover = function(e)
     {
         e.preventDefault();
