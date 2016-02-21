@@ -48,8 +48,7 @@ function finish()
         return;
     }
 
-    var spawn = require("child_process").spawn;
-    var prc = spawn(execpath);
+    gui.Shell.openItem(execpath);
 }
 
 function changeButtonStopToReset()
