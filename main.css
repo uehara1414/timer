@@ -1,9 +1,30 @@
+div.top{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 400px;
+    height: 40px;
+    background: rgba(171, 27, 193, 0.57);
+    -webkit-app-region: drag;
+}
+
+div.svgbox{
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    width: 400px;
+    height: 400px;
+    background: rgba(192, 252, 119, 0.64);
+}
+
 div.time{
-  position: absolute;
-  width: 90%;
-  height: 50%;
-  text-align: center;
-  background: seagreen;
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    width: 90%;
+    height: 50%;
+    text-align: center;
+    background: seagreen;
 }
 
 div.hoursbox{
@@ -38,7 +59,7 @@ div.secondsbox{
     position: absolute;
     top: 50%;
     width: 90%;
-    height: 40%;
+    height: 20%;
     text-align: center;
     background: pink;
     -webkit-app-region: drag;
@@ -53,21 +74,24 @@ input.start{
 
 input.stopAndReset{
     position: absolute;
-    left: 33%;    
+    left: 33%;
     width: 33%;
     height: 50%;
 }
 
 input.save{
     position: absolute;
-    left: 66%;    
+    left: 66%;
     width:33%;
     height: 50%;
 }
 
-img{
-    width: 40%;
-    height: 90%;
+circle#c0{
+    -webkit-app-region: drag;
+}
+
+rect{
+    -webkit-app-region: no-drag;
 }
 
 input{

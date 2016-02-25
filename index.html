@@ -4,11 +4,21 @@
     <script src="src/jquery-2.2.0.min.js"></script>
     <script src="src/jquery.mousewheel.min.js"></script>
     <script src="src/main.js"></script>
+    <script src="src/velocity.min.js"></script>
     <link rel="stylesheet" href="./main.css">
   </head>
 
   <body>
-    <audio id="bell" src="sounds/bell1.mp3" preload="auto"> </audio>
+    <div class="top">
+    </div>
+
+    <div class="svgbox">
+        <svg viewBox="0 0 400 400">
+          <rect x="0" y="0" width="400" height="400" fill="rgba(81, 41, 85, 0.86)"/>
+        </svg>
+    </div>
+
+    <!--
     <div class="time">
         <div class="hoursbox">
             <img class="hour1">
@@ -38,6 +48,7 @@
       <input class="save" type="button" value="save" onclick="save()">
 
     </div>
+  -->
   </body>
 
 </html>
