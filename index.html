@@ -6,6 +6,80 @@
     <script src="src/main.js"></script>
     <script src="src/velocity.min.js"></script>
     <link rel="stylesheet" href="./main.css">
+    <script>
+    <!--
+        window.onload = function(){
+            $(".secondsbox").mousedown(function(e){
+                if ( e.button == 2 ) {
+                    Timer.addSeconds(-1);
+                } else {
+                    Timer.addSeconds(1);
+                }
+                update();
+            });
+
+            $(".minutesbox").mousedown(function(e){
+                if ( e.button == 2 ) {
+                    Timer.addMinutes(-1);
+                } else {
+                    Timer.addMinutes(1);
+                }
+                update();
+            });
+
+            $(".hoursbox").mousedown(function(e){
+                if ( e.button == 2 ) {
+                    Timer.addHours(-1);
+                } else {
+                    Timer.addHours(1);
+                }
+                update();
+            });
+
+            $(".minutesbox").mousewheel(function(eo, delta, deltaX, deltaY){
+                Timer.addMinutes(deltaY);
+                update();
+            });
+
+            $(".secondsbox").mousewheel(function(eo, delta, deltaX, deltaY){
+                Timer.addSeconds(deltaY);
+                update();
+            });
+
+            $(".hoursbox").mousewheel(function(eo, delta, deltaX, deltaY){
+                Timer.addHours(deltaY);
+                update();
+            });
+
+            $(".start").click(function(){
+                start();
+            })
+
+            $(".stop").click(function(){
+                stop();
+            })
+
+            $(".reset").click(function(){
+                reset();
+            })
+
+            $(".save").click(function(){
+                save();
+            })
+
+            window.ondragover = function(e)
+            {
+                e.preventDefault();
+            }
+            window.ondrop = function(e)
+            {
+                e.preventDefault();
+                execpath = e.dataTransfer.files[0].path;
+            }
+        }
+
+    -->
+    </script>
   </head>
 
   <body>
@@ -14,41 +88,32 @@
 
     <div class="svgbox">
         <svg viewBox="0 0 400 400">
+          <!-- background -->
           <rect x="0" y="0" width="400" height="400" fill="rgba(81, 41, 85, 0.86)"/>
+          <circle cx="200" cy="200" r="190" stroke="rgba(244, 33, 222, 0.8)" stroke-width="11" fill="none" />
+          <circle cx="200" cy="200" r="170" stroke="rgba(244, 33, 222, 0.8)" stroke-width="2" fill="none" />
+          <circle cx="200" cy="200" r="175" stroke="rgba(244, 33, 222, 0.8)" stroke-width="2" fill="none" />
+          <circle cx="200" cy="200" r="150" fill="rgba(244, 33, 222, 0.8)" />
+
+          <!-- time view -->
+
+          <rect x="80" y="150" width="240" height="100" fill="rgba(252, 83, 35, 0.71)" />
+
+          <rect class="hoursbox" x="80" y="150" width="80" height="100" fill="rgba(53, 19, 135, 0.81)" />
+          <text class="hoursbox" x="120" y="215" text-anchor="middle" font-size="60" fill="black"> 00 </text>
+
+          <rect class="minutesbox" x="160" y="150" width="80" height="100" fill="rgba(123, 164, 49, 0.79)" />
+          <text class="minutesbox" x="200" y="215" text-anchor="middle" font-size="60" fill="black"> 00 </text>
+
+          <rect class="secondsbox" x="240" y="150" width="80" height="100" fill="rgba(173, 116, 36, 0.8)" />
+          <text class="secondsbox" x="280" y="215" text-anchor="middle" font-size="60" fill="black"> 00 </text>
+
+          <!-- control -->
+          <circle class="start" cx="80" cy="300" r="50" fill="rgba(170, 175, 38, 0.79)" />
+          <circle class="stop" cx="200" cy="300" r="50" fill="rgba(170, 175, 38, 0.79)" />
+          <circle class="save" cx="320" cy="300" r="50" fill="rgba(170, 175, 38, 0.79)" />
         </svg>
     </div>
-
-    <!--
-    <div class="time">
-        <div class="hoursbox">
-            <img class="hour1">
-            <img class="hour2">
-        </div>
-
-        <div class="separator">:</div>
-
-        <div class="minutesbox">
-            <img class="minute1">
-            <img class="minute2">
-        </div>
-
-        <div class="separator">:</div>
-
-        <div class="secondsbox">
-            <img class="second1">
-            <img class="second2">
-        </div>
-
-    </div>
-
-    <div class="control">
-
-      <input class="start" type="button" value="start" onclick="start()">
-      <input class="stopAndReset" type="button" value="reset" onclick="reset()">
-      <input class="save" type="button" value="save" onclick="save()">
-
-    </div>
-  -->
   </body>
 
 </html>
