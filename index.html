@@ -3,8 +3,8 @@
   <head>
     <script src="src/jquery-2.2.0.min.js"></script>
     <script src="src/jquery.mousewheel.min.js"></script>
-    <script src="src/main.js"></script>
     <script src="src/velocity.min.js"></script>
+    <script src="src/main.js"></script>
     <link rel="stylesheet" href="./main.css">
     <script>
     <!--
@@ -51,12 +51,8 @@
                 update();
             });
 
-            $(".start").click(function(){
-                start();
-            })
-
-            $(".stop").click(function(){
-                stop();
+            $(".start_or_stop").click(function(){
+                startOrStop();
             })
 
             $(".reset").click(function(){
@@ -76,6 +72,10 @@
                 e.preventDefault();
                 execpath = e.dataTransfer.files[0].path;
             }
+
+            reset();
+            update();
+            setGlobalHotKey();
         }
 
     -->
@@ -107,11 +107,11 @@
           <text class="secondsbox" x="280" y="215" text-anchor="middle" font-size="60" fill="black"> 00 </text>
 
           <!-- control -->
-          <circle class="start" cx="80" cy="300" r="50" fill="rgba(244, 33, 222, 0.8)" />
-          <text class="start" x="80" y="300" font-size="30" text-anchor="middle" fill="rgba(28, 158, 73, 0.9)"> start </text>
+          <circle class="start_or_stop" cx="80" cy="300" r="50" fill="rgba(244, 33, 222, 0.8)" />
+          <text class="start_or_stop" x="80" y="300" font-size="30" text-anchor="middle" fill="rgba(28, 158, 73, 0.9)"> start </text>
 
-          <circle class="stop" cx="200" cy="300" r="50" fill="rgba(244, 33, 222, 0.8)" />
-          <text class="stop" x="200" y="300" font-size="30" text-anchor="middle" fill="rgba(28, 158, 73, 0.9)"> stop </text>
+          <circle class="reset" cx="200" cy="300" r="50" fill="rgba(244, 33, 222, 0.8)" />
+          <text class="reset" x="200" y="300" font-size="30" text-anchor="middle" fill="rgba(28, 158, 73, 0.9)"> reset </text>
 
           <circle class="save" cx="320" cy="300" r="50" fill="rgba(244, 33, 222, 0.8)" />
           <text class="save" x="320" y="300" font-size="30" text-anchor="middle" fill="rgba(28, 158, 73, 0.9)"> save </text>

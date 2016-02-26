@@ -13,6 +13,15 @@ function zfill(number)
     }
 }
 
+function startOrStop()
+{
+    if ( Timer.isStarted() ) {
+        stop();
+    } else {
+        start();
+    }
+}
+
 function start()
 {
     if (Timer.isStarted()) {
@@ -21,7 +30,7 @@ function start()
 
     Timer.start();
     timerID = setInterval(update, 100);
-    changeButtonResetToStop();
+    changeButtonStartToStop();
 }
 
 function save()
@@ -51,20 +60,6 @@ function finish()
     gui.Shell.openItem(execpath);
 }
 
-function changeButtonStopToReset()
-{
-    $(".stop").text("reset");
-    $(".stop").attr("class", "reset");
-    $(".reset").click(function(){reset()});
-}
-
-function changeButtonResetToStop()
-{
-    $(".reset").text("stop");
-    $(".reset").attr("class", "stop");
-    $(".stop").click(function(){stop()});
-}
-
 function display()
 {
     var hours = String(zfill(Timer.getHours()));
@@ -79,62 +74,22 @@ function stop()
 {
     Timer.stop();
     clearInterval(timerID);
-    changeButtonStopToReset();
+    changeButtonStopToStart();
 }
 
-
-window.onload = function()
+function changeButtonStartToStop()
 {
-    $(".secondsbox").mousedown(function(e){
-        if ( e.button == 2 ) {
-            Timer.addSeconds(-1);
-        } else {
-            Timer.addSeconds(1);
-        }
-        update();
-    });
+    $("text.start_or_stop").text("stop");
+}
 
-    $(".minutesbox").mousedown(function(e){
-        if ( e.button == 2 ) {
-            Timer.addMinutes(-1);
-        } else {
-            Timer.addMinutes(1);
-        }
-        update();
-    });
-
-    $(".hoursbox").mousedown(function(e){
-        if ( e.button == 2 ) {
-            Timer.addHours(-1);
-        } else {
-            Timer.addHours(1);
-        }
-        update();
-    });
-
-    $(".minutesbox").mousewheel(function(eo, delta, deltaX, deltaY){
-        Timer.addMinutes(deltaY);
-        update();
-    });
-
-    $(".secondsbox").mousewheel(function(eo, delta, deltaX, deltaY){
-        Timer.addSeconds(deltaY);
-        update();
-    });
-
-    $(".hoursbox").mousewheel(function(eo, delta, deltaX, deltaY){
-        alert(eo);
-        Timer.addHours(deltaY);
-        update();
-    });
-
-    reset();
-    update();
-    setGlobalHotKey()
+function changeButtonStopToStart()
+{
+    $("text.start_or_stop").text("start");
 }
 
 function reset()
 {
+    stop();
     Timer.clear();
     Timer.addHours(Settings.defaultHours);
     Timer.addMinutes(Settings.defaultMinutes);

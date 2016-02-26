@@ -15,9 +15,9 @@
     "position": "mouse",
     "always-on-top": true,
     "min_width": 160,
-    "min_height": 100,
-    "max_width": 1280,
-    "max_height": 720
+    "min_height": 160,
+    "max_width": 800,
+    "max_height": 800
   },
   "webkit": {
     "plugin": true

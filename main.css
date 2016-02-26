@@ -2,8 +2,8 @@ div.top{
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 90%;
-    height: 5%;
+    width: 20%;
+    height: 20%;
     background: rgba(171, 27, 193, 0.57);
     -webkit-app-region: drag;
 }
@@ -11,7 +11,7 @@ div.top{
 div.svgbox{
     position: absolute;
     left: 0px;
-    top: 10%;
+    top: 0%;
     width: 90%;
     height: 90%;
 }
