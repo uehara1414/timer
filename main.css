@@ -2,9 +2,9 @@ div.top{
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 20%;
-    height: 20%;
-    background: rgba(171, 27, 193, 0.57);
+    width: 10%;
+    height: 10%;
+    background: rgba(171, 27, 193, 0.30);
     -webkit-app-region: drag;
 }
 
