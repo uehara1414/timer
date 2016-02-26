@@ -10,7 +10,7 @@
     "show_in_taskbar": false,
     "transparent": true,
     "frame": false,
-    "width": 410,
+    "width": 450,
     "height": 450,
     "position": "mouse",
     "always-on-top": true,

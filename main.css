@@ -2,8 +2,8 @@ div.top{
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 400px;
-    height: 40px;
+    width: 90%;
+    height: 5%;
     background: rgba(171, 27, 193, 0.57);
     -webkit-app-region: drag;
 }
@@ -11,91 +11,9 @@ div.top{
 div.svgbox{
     position: absolute;
     left: 0px;
-    top: 40px;
-    width: 400px;
-    height: 400px;
-    background: rgba(192, 252, 119, 0.64);
-}
-
-div.time{
-    position: absolute;
-    left: 0px;
-    top: 40px;
+    top: 10%;
     width: 90%;
-    height: 50%;
-    text-align: center;
-    background: seagreen;
-}
-
-div.hoursbox{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 30%;
-    height: 100%;
-    background: blue;
-}
-
-div.minutesbox{
-    position: absolute;
-    top: 0%;
-    left: 33%;
-    width: 30%;
-    height: 100%;
-    background: gold;
-}
-
-div.secondsbox{
-    position: absolute;
-    top: 0%;
-    left: 66%;
-    width: 30%;
-    height: 100%;
-    background: salmon;
-}
-
-
-.control{
-    position: absolute;
-    top: 50%;
-    width: 90%;
-    height: 20%;
-    text-align: center;
-    background: pink;
-    -webkit-app-region: drag;
-}
-
-input.start{
-    position: absolute;
-    left: 0%;
-    width: 33%;
-    height: 50%;
-}
-
-input.stopAndReset{
-    position: absolute;
-    left: 33%;
-    width: 33%;
-    height: 50%;
-}
-
-input.save{
-    position: absolute;
-    left: 66%;
-    width:33%;
-    height: 50%;
-}
-
-circle#c0{
-    -webkit-app-region: drag;
-}
-
-rect{
-    -webkit-app-region: no-drag;
-}
-
-input{
-  -webkit-app-region: no-drag;
+    height: 90%;
 }
 
 body{
