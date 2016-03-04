@@ -5,13 +5,14 @@
   "main": "index.html",
   "window": {
     "title": "timer",
+    "single-instance": false,
     "toolbar": false,
     "scrollbar": false,
     "show_in_taskbar": false,
     "transparent": true,
     "frame": false,
-    "width": 200,
-    "height": 200,
+    "width": 220,
+    "height": 220,
     "position": "mouse",
     "always-on-top": true,
     "min_width": 160,
@@ -39,7 +40,8 @@
   },
   "homepage": "https://github.com/b1015062Furukawa/timer#readme",
   "dependencies": {
-    "moment": "^2.11.2"
+    "moment": "^2.11.2",
+    "nw-builder": "^2.2.0"
   },
   "devDependencies": {
     "nw-builder": "^2.2.0"

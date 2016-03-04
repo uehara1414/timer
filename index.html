@@ -3,123 +3,21 @@
   <head>
     <script src="src/jquery-2.2.0.min.js"></script>
     <script src="src/jquery.mousewheel.min.js"></script>
+    <script src="src/jquery.blast.min.js"></script>
     <script src="src/velocity.min.js"></script>
+    <script src="src/velocity.ui.js"></script>
+    <script src="src/snap.svg.js"></script>
+    <script src="src/Button.js"></script>
     <script src="src/main.js"></script>
     <link rel="stylesheet" href="./main.css">
-    <script>
-    <!--
-        window.onload = function(){
-            $(".secondsbox").mousedown(function(e){
-                if ( e.button == 2 ) {
-                    Timer.addSeconds(-1);
-                } else {
-                    Timer.addSeconds(1);
-                }
-                update();
-            });
-
-            $(".minutesbox").mousedown(function(e){
-                if ( e.button == 2 ) {
-                    Timer.addMinutes(-1);
-                } else {
-                    Timer.addMinutes(1);
-                }
-                update();
-            });
-
-            $(".hoursbox").mousedown(function(e){
-                if ( e.button == 2 ) {
-                    Timer.addHours(-1);
-                } else {
-                    Timer.addHours(1);
-                }
-                update();
-            });
-
-            $(".minutesbox").mousewheel(function(eo, delta, deltaX, deltaY){
-                Timer.addMinutes(deltaY);
-                update();
-            });
-
-            $(".secondsbox").mousewheel(function(eo, delta, deltaX, deltaY){
-                Timer.addSeconds(deltaY);
-                update();
-            });
-
-            $(".hoursbox").mousewheel(function(eo, delta, deltaX, deltaY){
-                Timer.addHours(deltaY);
-                update();
-            });
-
-            $(".start_or_stop").click(function(){
-                startOrStop();
-            })
-
-            $(".reset").click(function(){
-                reset();
-            })
-
-            $(".save").click(function(){
-                save();
-            })
-
-            window.ondragover = function(e)
-            {
-                e.preventDefault();
-            }
-            window.ondrop = function(e)
-            {
-                e.preventDefault();
-                execpath = e.dataTransfer.files[0].path;
-            }
-
-            reset();
-            update();
-            setGlobalHotKey();
-        }
-
-    -->
-    </script>
   </head>
-
   <body>
     <div class="top">
     </div>
 
-    <div class="svgbox">
-        <svg viewBox="0 0 450 400">
-          <!-- background -->
-          <circle cx="200" cy="200" r="190" stroke="rgba(244, 33, 222, 0.8)" stroke-width="11" fill="none" />
-          <circle cx="200" cy="200" r="170" stroke="rgba(244, 33, 222, 0.8)" stroke-width="2" fill="none" />
-          <circle cx="200" cy="200" r="175" stroke="rgba(244, 33, 222, 0.8)" stroke-width="2" fill="none" />
-          <circle cx="200" cy="200" r="150" fill="rgba(244, 33, 222, 0.8)" />
-
-          <!-- time view -->
-          <rect x="80" y="150" width="240" height="100" fill="none" />
-
-          <rect class="hoursbox" x="80" y="150" width="80" height="100" fill="none" />
-          <text class="hoursbox" x="120" y="215" text-anchor="middle" font-size="70" fill="white"> 00 </text>
-
-          <text x="160" y="208" text-anchor="middle" font-size="70" fill="white"> : </text>
-
-          <rect class="minutesbox" x="160" y="150" width="80" height="100" fill="none" />
-          <text class="minutesbox" x="200" y="215" text-anchor="middle" font-size="70" fill="white"> 00 </text>
-
-          <text x="240" y="208" text-anchor="middle" font-size="70" fill="white"> : </text>
-
-          <rect class="secondsbox" x="240" y="150" width="80" height="100" fill="none" />
-          <text class="secondsbox" x="280" y="215" text-anchor="middle" font-size="70" fill="white"> 00 </text>
-
-          <!-- control -->
-          <circle class="start_or_stop" cx="80" cy="300" r="50" fill="rgba(244, 33, 222, 0.8)" />
-          <text class="start_or_stop" x="80" y="308" font-size="30" text-anchor="middle" fill="white"> start </text>
-
-          <circle class="reset" cx="200" cy="300" r="50" fill="rgba(244, 33, 222, 0.8)" />
-          <text class="reset" x="200" y="308" font-size="30" text-anchor="middle" fill="white"> reset </text>
-
-          <circle class="save" cx="320" cy="300" r="50" fill="rgba(244, 33, 222, 0.8)" />
-          <text class="save" x="320" y="308" font-size="30" text-anchor="middle" fill="white"> save </text>
-        </svg>
+    <div class="container">
+      <svg id="pep" viewBox="0 0 400 400">
+      </svg>
     </div>
   </body>
 
