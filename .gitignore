@@ -37,3 +37,5 @@ node_modules
 
 # For Author
 run.py
+build
+cache
